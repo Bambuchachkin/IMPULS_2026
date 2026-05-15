@@ -185,10 +185,10 @@ python3 QAM_Analysis.py
 │   ├── CMakeLists.txt
 │   ├── cpp/                    # исходники C++
 │   │   ├── main.cpp
-│   │   ├── QAM_Modulator.*
-│   │   ├── QAM_Demodulator.*
-│   │   ├── Generator.*         # генерация созвездия
-│   │   └── Noise.*             # добавление шума
+│   │   ├── QAM_Modulator.
+│   │   ├── QAM_Demodulator.
+│   │   ├── Generator.          # генерация созвездия
+│   │   └── Noise.              # добавление шума
 │   ├── python/
 │   │   ├── QAM_Analysis.py
 │   │   └── venv/
