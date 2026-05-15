@@ -12,14 +12,14 @@ Poisson_Model::~Poisson_Model() {}
 std::vector<packet> Poisson_Model::Simulation(double time) {
     double current_time = 0;
     std::vector<packet> packets;
-    int current_size = 0;
+    double current_size = 0;
     while (current_time < time) {
         current_time += P_interval(Generator);
         current_size = P_size(Generator);
         if (current_size < 1) {
             current_size = 1;
         }
-        packets.push_back(packet(current_time, round(current_size)));
+        packets.push_back(packet{current_time, static_cast<int>(round(current_size))});
     }
     return packets;
 }

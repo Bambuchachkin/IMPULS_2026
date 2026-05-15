@@ -8,7 +8,7 @@ std::vector<packet> Uniform_Model::Simulation(double time) {
     std::vector<packet> packets;
     while (current_time < time) {
         current_time += p_interval;
-        packets.push_back(packet(current_time, p_size));
+        packets.push_back(packet{current_time, p_size});
     }
     return packets;
 }
