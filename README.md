@@ -25,7 +25,7 @@ chmod +x bash
 ```
 Скрипт автоматически:
 
-    Создаёт виртуальное окружение PythonProject/venv и устанавливает нужные библиотеки.
+    Создаёт виртуальное окружение python/venv и устанавливает нужные библиотеки.
 
     Собирает C++ проект в папке build
 
@@ -48,7 +48,7 @@ make
 
 2. Подготовка Python-окружения
 ```
-cd ../PythonProject
+cd ../python
 python3 -m venv venv
 source venv/bin/activate
 pip install pandas numpy matplotlib
@@ -65,7 +65,7 @@ pip install pandas numpy matplotlib
 
 Анализ CSV и построение графика
 ```
-python Analysis.py ../Examples/test_uniform.csv
+python3 Analysis.py ../Examples/test_uniform.csv
 ```
 
 Входные файлы должны содержать две строки:
@@ -88,13 +88,13 @@ uniform: 1.0 1000
 ```
 .
 ├── CMakeLists.txt          # Сборка C++
-├── Sources/                # Исходники C++
+├── cpp/                    # Исходники C++
 │   ├── main.cpp
 │   ├── Traffic_Model.*
 │   ├── Uniform_Model.*
 │   ├── Poisson_Model.*
 │   └── File_Manager.*
-├── PythonProject/
+├── python/
 │   ├── Analysis.py         # Скрипт анализа
 │   └── venv/               # Виртуальное окружение (создаётся автоматически)
 ├── Examples/               # Входные файлы для тестов (без расширения)
