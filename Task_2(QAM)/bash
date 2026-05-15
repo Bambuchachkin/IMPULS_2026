@@ -1,5 +1,5 @@
 #!/bin/bash
-cd "$(dirname "$0")"
+#cd "$(dirname "$0")"
 
 # Python venv
 VENV_DIR="python/venv"
@@ -12,12 +12,12 @@ else
 fi
 
 # Сборка C++
-if [ ! -f build/QAM ]; then
-    mkdir -p build && cd build && cmake .. && make && cd ..
-fi
-
+#if [ ! -f build/QAM ]; then
+#    mkdir -p build && cd build && cmake .. && make && cd ..
+#fi
+mkdir -p build && cd build && cmake .. && make && cd ..
 build/QAM 4
 build/QAM 16
 build/QAM 64
 python3 python/QAM_Analysis.py
-done
+

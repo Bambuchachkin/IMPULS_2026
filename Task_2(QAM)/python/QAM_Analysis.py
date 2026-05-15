@@ -9,11 +9,11 @@ data64 = pd.read_csv('../CSV/ber_variance_64.csv')
 plt.figure(figsize=(8, 6))
 
 # 4-QAM (QPSK)
-plt.loglog(data4['variance'], data4['ber'], 'bo-', markersize=4, label='QPSK (4-QAM)')
+plt.semilogy(data4['variance'], data4['ber'], 'bo-', markersize=4, label='QPSK (4-QAM)')
 # 16-QAM
-plt.loglog(data16['variance'], data16['ber'], 'rs-', markersize=4, label='16-QAM')
+plt.semilogy(data16['variance'], data16['ber'], 'rs-', markersize=4, label='16-QAM')
 # 64-QAM
-plt.loglog(data64['variance'], data64['ber'], 'g^-', markersize=4, label='64-QAM')
+plt.semilogy(data64['variance'], data64['ber'], 'g^-', markersize=4, label='64-QAM')
 
 plt.grid(True, which='both', ls='--', alpha=0.7)
 plt.xlabel('Дисперсия шума (на измерение)')
