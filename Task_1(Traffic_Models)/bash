@@ -1,0 +1,24 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+# Python venv
+VENV_DIR="PythonProject/venv"
+if [ ! -d "$VENV_DIR" ]; then
+    python3 -m venv "$VENV_DIR"
+    source "$VENV_DIR/bin/activate"
+    pip install pandas numpy matplotlib
+else
+    source "$VENV_DIR/bin/activate"
+fi
+
+# Сборка C++
+if [ ! -f build/traffic_model ]; then
+    mkdir -p build && cd build && cmake .. && make && cd ..
+fi
+
+# Прогон тестов
+for f in Examples/*.txt; do
+    [ -f "$f" ] || continue
+    build/traffic_model "$f"
+    python3 PythonProject/Analysis.py "${f%.txt}.csv"
+done
