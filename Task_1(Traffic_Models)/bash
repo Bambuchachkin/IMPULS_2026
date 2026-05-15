@@ -16,9 +16,14 @@ if [ ! -f build/traffic_model ]; then
     mkdir -p build && cd build && cmake .. && make && cd ..
 fi
 
-# Прогон тестов
-for f in Examples/*.txt; do
+# Прогон тестов: берём все файлы в Examples, кроме .csv и .png
+for f in Examples/*; do
     [ -f "$f" ] || continue
+    # Пропускаем файлы с уже сгенерированными результатами
+    if [[ "$f" == *.csv || "$f" == *.png ]]; then
+        continue
+    fi
+    echo "=== Processing $f ==="
     build/traffic_model "$f"
-    python3 PythonProject/Analysis.py "${f%.txt}.csv"
+    python3 PythonProject/Analysis.py "${f}.csv"
 done

@@ -1,3 +1,0 @@
-/home/bambuchachkin/CLionProjects/YADRO/IMPULS_2026/build/CMakeFiles/traffic_model.dir
-/home/bambuchachkin/CLionProjects/YADRO/IMPULS_2026/build/CMakeFiles/edit_cache.dir
-/home/bambuchachkin/CLionProjects/YADRO/IMPULS_2026/build/CMakeFiles/rebuild_cache.dir
