@@ -1,2 +1,7 @@
-cmake-build-*/
-python/venv/
+Task_2\(QAM\)/cmake-build-*/
+Task_2\(QAM\)/python/venv/
+Task_2\(QAM\)/CSV/*.csv
+
+Task_1\(Traffic_Models\)/cmake-build-*/
+Task_1\(Traffic_Models\)/python/venv/
+Task_1\(Traffic_Models\)/Examples/*.csv
